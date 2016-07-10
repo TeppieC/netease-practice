@@ -49,7 +49,6 @@ function changePage(){
 	var controls = document.querySelector(".g-banner .m-banner .m-controls").childNodes;
 	console.log(controls.length);
 	for (var i=0;i<controls.length;i++){
-		//controls[i].addEventListener('click', handler, false);
 		addClickHandler(controls[i],i);
 	}
 
@@ -59,16 +58,14 @@ function changePage(){
 			var clicked = controls[index];
 			current.className = "";
 			clicked.className = "cur";
+			var banners = document.querySelector(".g-banner .m-banner .banners").childNodes;
+			console.log(banners.length);
+			for (var i=0;i<banners.length;i++){
+				banners[i].className="banner-picture";
+			}
+			banners[index].className+=" current";
         }, false);
 	}
-
-	/*
-	var handler = function(event, index){
-		var current = document.querySelector(".g-banner .m-banner .m-controls .cur");
-		var clicked = controls[index];
-		current.className = "";
-		clicked.className = "cur";
-	}*/
 }
 changePage();
 
@@ -81,62 +78,16 @@ function slide(){
 		next = document.querySelectorAll('.m-banner .banners img')[0];
 	}
 	next.className += " current";
-}
-
-var autoSlide = function(){timer=setInterval(slide,5000);}();
-
-//find the highest z-index
-//set to invisible
-//find its sibling
-/*
-(window.onload = function(){
-	function getElementsByClassName(root, className) {
-	  // 特性侦测
-	  if (root.getElementsByClassName) {
-	    // 优先使用 W3C 规范接口
-	    return root.getElementsByClassName(className);
-	  } else {
-	    // 获取所有后代节点
-	    var elements = root.getElementsByTagName('*');
-	    var result = [];
-	    var element = null;
-	    var classNameStr = null;
-	    var flag = null;
-
-	    className = className.split(' ');
-
-	    // 选择包含 class 的元素
-	    for (var i = 0, element; element = elements[i]; i++) {
-	      classNameStr = ' ' + element.getAttribute('class') + ' ';
-	      flag = true;
-	      for (var j = 0, name; name = className[j]; j++) {
-	        if (classNameStr.indexOf(' ' + name + ' ') === -1) {
-	          flag = false;
-	          break;
-	        }
-	      }
-	      if (flag) {
-	        result.push(element);
-	      }
-	    }
-	    return result;
-	  }
-	}
-
-	var tipsBar = (function(){
-		var tipBar = document.getElementById("m-tips");
-		var noTipButton = document.getElementById('no-tips');
-		// 事件处理函数
-		var clickHandler = function(event, tipBar) {
-				tipBar.className+='f-hide';
-		};
-
-		if(noTipButton){
-			noTipButton.addEventListener('click', clickHandler, false);
+	var controls = document.querySelector(".g-banner .m-banner .m-controls").childNodes;
+	var banners = document.querySelector(".g-banner .m-banner .banners").childNodes;
+	for (var i=0;i<banners.length;i++){
+		if(banners[i].className=="banner-picture current"){
+			for (var j=0;j<controls.length;j++){
+				controls[j].className="";
+			}
+			controls[i].className = "cur";
 		}
-	}());
-})()
-*/
-
-
+	}
+}
+var autoSlide = function(){timer=setInterval(slide,5000);}();
 
