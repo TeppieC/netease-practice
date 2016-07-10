@@ -181,3 +181,15 @@ html, body{
 .m-banner .m-controls span.cur{
 	background: url(../img/dot.png) no-repeat center 0;
 }
+
+.m-banner .banners img{
+	z-index: 1;
+	opacity: 0;
+	display: none;
+}
+
+.m-banner .banners .current{
+	z-index: 2;
+	opacity: 1;
+	display: block;
+}
