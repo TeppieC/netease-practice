@@ -193,3 +193,72 @@ html, body{
 	opacity: 1;
 	display: block;
 }
+
+.g-products{
+	width: 100%;
+	height: 297px;
+	background-color: #ffffff;
+	padding-top: 60px;
+}
+
+.m-products{
+	width: 80%;
+	height: 200px;
+	margin: auto;
+}
+
+.m-products .product{
+	display: inline-block;
+	height: 200px;
+	width: 33%;
+	padding:0 10px;
+}
+
+.m-products .product .logo{
+	width: 80px;
+	height: 80px;
+	display: inline-block;
+	position: relative;
+	bottom: 50px;
+	right: 10px;
+}
+
+.m-products .product .content{
+	display: inline-block;
+	width: 200px;
+}
+
+.m-products .product-1 .logo{
+	background: url(../img/logo-1.jpg) no-repeat 0 0;
+}
+
+.m-products .product-2 .logo{
+	background: url(../img/logo-2.jpg) no-repeat 0 0;
+}
+
+.m-products .product-3 .logo{
+	background: url(../img/logo-3.jpg) no-repeat 0 0;
+}
+
+.m-products .product .content .title{
+	font-size: 21px;
+	position: relative;
+	bottom: 10px;
+}
+
+.m-products .product .content .intro{
+	font-size: 14px;
+	color: #666666;
+	line-height: 1.5em;
+}
+
+.m-products .product .content .learn-more{
+	font-size: 13px;
+	color: #39a030;
+	position: relative;
+	top: 20px;
+}
+
+.m-products .product .content .learn-more:hover{
+	text-decoration: underline; 
+}
